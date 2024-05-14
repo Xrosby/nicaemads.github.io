@@ -19,13 +19,19 @@
 
         .container {
             text-align: center;
+            max-width: 80%;
+            /* Adjust the max-width as needed */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
         }
 
         h1 {
             color: #333;
             font-size: 24px;
             margin: 0;
-            padding: 10px 0;
+            padding: 10px 0 20px 0;
             border-bottom: 2px solid #ccc;
             display: inline-block;
             text-transform: uppercase;
@@ -50,7 +56,7 @@
         }
 
         #lista-nozze {
-            font-size: 36px;
+            font-size: 25px;
             color: #333;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -61,16 +67,70 @@
         #lista-nozze:hover {
             color: #111;
         }
+
+        /* Media Query for Tablets */
+        @media only screen and (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                /* Adjust as needed for smaller screens */
+            }
+
+            h1 {
+                font-size: 20px;
+                /* Adjust heading size for smaller screens */
+            }
+
+            .iban {
+                font-size: 16px;
+                /* Adjust font size for smaller screens */
+            }
+
+            .listanozze,
+            #lista-nozze {
+                font-size: 24px;
+                /* Adjust font size for smaller screens */
+            }
+        }
+
+        /* Media Query for Smartphones */
+        @media only screen and (max-width: 480px) {
+            .container {
+                max-width: 95%;
+                /* Adjust as needed for smaller screens */
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 15px;
+                /* Adjust heading size for smaller screens */
+            }
+
+            .iban {
+                font-size: 14px;
+                /* Adjust font size for smaller screens */
+            }
+
+            .listanozze,
+            #lista-nozze {
+                font-size: 15px;
+                /* Adjust font size for smaller screens */
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div id="separator">
-            <h1>IBAN: IT14 B036 4601 6005 2641 0290 125</h1>
-        </div>
+        <div>
+            <div id="separator">
+                <h1>IBAN: IT14 B036 4601 6005 2641 0290 125</h1>
+            </div>
 
-        <a id="lista-nozze" href="#">Lista nozze - Ønskeliste</a>
+            <a id="lista-nozze" href="#">Lista nozze - Ønskeliste</a>
+        </div>
     </div>
 </body>
 
