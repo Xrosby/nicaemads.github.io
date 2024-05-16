@@ -7,6 +7,74 @@
     <title>Lista Nozze - Ønskeliste</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        :root {
+            --cardSideOne: white;
+            --cardSideTwo: white;
+
+            --fontColorHeader: black;
+            --fontColorBody: white;
+
+            font-size: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            color: var(--fontColorBody);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cardContainer {
+            margin: 20px 0;
+        }
+
+        .card {
+            transform-style: preserve-3d;
+            perspective: 600;
+            cursor: pointer;
+            position: relative;
+            width: 400px;
+            height: 250px;
+            transition: all 0.5s ease;
+            box-shadow: 1px 2px 4px #333;
+        }
+
+        .side {
+            backface-visibility: hidden;
+            position: absolute;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card_hover {
+            transform: rotateY(180deg);
+        }
+
+        .card--front {
+            font-size: 25px;
+            color: #d9534f;
+            font-weight: 300;
+            padding: 18px;
+            background-color: var(--cardSideOne);
+        }
+
+        .card--back {
+            transform: rotateY(180deg);
+            background-color: var(--cardSideTwo);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -19,8 +87,12 @@
         }
 
         .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            max-width: 80%;
+            height: 75%;
+            width: 80%;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -81,7 +153,7 @@
         }
 
         #separator {
-            display:flex;
+            display: flex;
             flex-direction: column;
             align-items: center;
             border-bottom: 2px solid #ccc;
@@ -89,7 +161,7 @@
         }
 
         button {
-            width:120px;
+            width: 120px;
             background-color: #d9534f;
             color: #fff;
             border: none;
@@ -105,8 +177,20 @@
 
         /* Media Query for Tablets */
         @media only screen and (max-width: 768px) {
+
+
+            .card {
+                width: 250px;
+                height: 200px;
+            }
+
+            .card--front {
+                font-size: 18px;
+            }
+
             .container {
-                max-width: 90%;
+                width: 95%;
+                height:95%;
             }
 
             h1 {
@@ -119,15 +203,24 @@
 
             .listanozze,
             #lista-nozze {
-                font-size: 24px;
+                font-size: 14px;
             }
         }
 
         /* Media Query for Smartphones */
         @media only screen and (max-width: 480px) {
+            .card {
+                width: 200px;
+                height: 150px;
+            }
+
+            .card--front {
+                font-size: 16px;
+            }
+
             .container {
-                max-width: 80%;
-                height: 90%;
+                width: 95%;
+                height: 98%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -143,7 +236,7 @@
 
             .listanozze,
             #lista-nozze {
-                font-size: 15px;
+                font-size: 13px;
             }
 
             .social-links a {
@@ -155,27 +248,69 @@
             }
         }
     </style>
+    <script src="https://kit.fontawesome.com/749e968ae4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
         <div>
-            <h2>Welcome to our wedding page!</h2>
-            <p>We are grateful for your presence and support on our special day.</p>
-            <div id="separator">
-                <h1 class="iban"><i class="fas fa-heart"></i> IBAN: IT14 B036 4601 6005 2641 0290 125</h1>
-                <button onclick="copyIBAN()">Copy IBAN</button>
+
+            <div class="cardContainer">
+                <div class="card" id="card">
+                    <div style="display:flex;flex-direction: column;" id="buttonFlip" class="card--front side">
+                        Help with our honeymoon
+                        <i style="margin-top:15px;" class="fa-solid fa-plane"></i>
+                    </div>
+                    <div class="card--back side">
+                        <div>
+                            <h1 class="iban"><i class="fas fa-heart"></i> IBAN: IT14 B036 4601 6005 2641 0290 125</h1>
+                            <button id="copy-iban" onclick="copyIBAN()">Copy IBAN</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a class="iban" id="lista-nozze" class="listanozze" href="#"><i class="fas fa-gift"></i> Lista nozze - Ønskeliste</a>
-  
+
+            <div class="cardContainer">
+                <div class="card" id="card2">
+                    <div style="display:flex;flex-direction: column;" id="buttonFlip2" class="card--front side">
+                        Help with decorating our house
+                        <i style="margin-top:15px;" class="fas fa-house"></i>
+                    </div>
+                    <div class="card--back side">
+                        <a style="display:flex;flex-direction: column;" class="iban" id="lista-nozze" class="listanozze"
+                            href="#"><i style="font-size:20px" class="fas fa-gift"></i><span> Lista
+                                nozze </span>
+                            Ønskeliste</a>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 
     <script>
         function copyIBAN() {
             navigator.clipboard.writeText("IT14 B036 4601 6005 2641 0290 125");
-            alert("IBAN copied to clipboard!");
+
+            const copyIbanBTN = document.getElementById('copy-iban')
+            copyIbanBTN.innerText = 'Copied!'
+
         }
+
+        const card = document.getElementById('card');
+        const buttonClick = document.getElementById('buttonFlip');
+        buttonClick.addEventListener('click', function () {
+            card.classList.add('card_hover');
+        });
+
+
+        const card2 = document.getElementById('card2');
+        const buttonClick2 = document.getElementById('buttonFlip2');
+        buttonClick2.addEventListener('click', function () {
+            card2.classList.add('card_hover');
+        });
+
     </script>
 </body>
 
