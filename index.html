@@ -36,7 +36,28 @@
             margin: 20px 0;
         }
 
+        #buttonFlip {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        #buttonFlip2 {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        #buttonFlip3 {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        #buttonFlip4 {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
         .card {
+            border-radius: 5px;
             transform-style: preserve-3d;
             perspective: 600;
             cursor: pointer;
@@ -44,7 +65,6 @@
             width: 400px;
             height: 250px;
             transition: all 0.5s ease;
-            box-shadow: 1px 2px 4px #333;
         }
 
         .side {
@@ -63,11 +83,13 @@
         }
 
         .card--front {
+            background-color: #ffffff !important;
             font-size: 25px;
             color: #d9534f;
             font-weight: 300;
             padding: 18px;
             background-color: var(--cardSideOne);
+            box-shadow: 1px 1px 4px #333;
         }
 
         .card--back {
@@ -96,7 +118,6 @@
             width: 80%;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             background-color: #fff;
         }
 
@@ -177,8 +198,8 @@
 
 
             .card {
-                width: 250px;
-                height: 200px;
+                width: 500px;
+                height: 410px;
             }
 
             .card--front {
@@ -207,8 +228,8 @@
         /* Media Query for Smartphones */
         @media only screen and (max-width: 480px) {
             .card {
-                width: 200px;
-                height: 150px;
+                width: 85vw;
+                height: 45vh;
             }
 
             .card--front {
@@ -261,7 +282,7 @@
                     <div id="buttonFlip2" class="card--back side">
                         <div>
                             <h1 class="iban"><i class="fas fa-heart"></i> IBAN: IT14 B036 4601 6005 2641 0290 125</h1>
-                            <button id="copy-iban" onclick="copyIBAN()">Copy IBAN</button>
+                            <button id="copy-iban">Copy IBAN</button>
                         </div>
                     </div>
                 </div>
@@ -296,6 +317,9 @@
             copyIbanBTN.style.backgroundColor = 'lightblue'
 
         }
+
+        const copyIbanBTN = document.getElementById('copy-iban')
+        copyIbanBTN.addEventListener(('click'), copyIBAN)
 
         const flipClass = 'card_hover'
 
