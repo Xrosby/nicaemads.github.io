@@ -318,6 +318,8 @@
 
         }
 
+        const delay = 100
+
         const copyIbanBTN = document.getElementById('copy-iban')
         copyIbanBTN.addEventListener(('click'), copyIBAN)
 
@@ -330,7 +332,7 @@
         buttonClick.addEventListener('click', function () {
             card.classList.toggle(flipClass);
             if (card2.classList.contains(flipClass)) {
-                setTimeout(() => card2.classList.toggle(flipClass), 300)
+                setTimeout(() => card2.classList.toggle(flipClass), delay)
 
             }
 
@@ -347,7 +349,7 @@
         buttonClick3.addEventListener('click', function () {
             card2.classList.toggle('card_hover');
             if (card.classList.contains(flipClass)) {
-                setTimeout(() => card.classList.toggle(flipClass), 300)
+                setTimeout(() => card.classList.toggle(flipClass), delay)
 
             }
         });
