@@ -71,6 +71,7 @@
         }
 
         .card--back {
+            background-color: #d9534f !important;
             transform: rotateY(180deg);
             background-color: var(--cardSideTwo);
         }
@@ -113,7 +114,7 @@
 
         .iban {
             font-weight: 700;
-            color: #d9534f;
+            color: white;
             font-size: 24px;
             margin: 0;
             padding: 10px 0 20px 0;
@@ -162,17 +163,13 @@
 
         button {
             width: 120px;
-            background-color: #d9534f;
-            color: #fff;
+            background-color: white;
+            color: #000;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #0056b3;
         }
 
         /* Media Query for Tablets */
@@ -264,7 +261,7 @@
                     <div id="buttonFlip2" class="card--back side">
                         <div>
                             <h1 class="iban"><i class="fas fa-heart"></i> IBAN: IT14 B036 4601 6005 2641 0290 125</h1>
-                            <button id="copy-iban" onclick="(e) => copyIBAN(e)">Copy IBAN</button>
+                            <button id="copy-iban" onclick="copyIBAN()">Copy IBAN</button>
                         </div>
                     </div>
                 </div>
@@ -277,8 +274,9 @@
                         <i style="margin-top:15px;" class="fas fa-house"></i>
                     </div>
                     <div id="buttonFlip4" class="card--back side">
-                        <a target="_blank" style="display:flex;flex-direction: column;" class="iban" id="lista-nozze" class="listanozze"
-                            href="https://www.habitatonline.it/"><i style="font-size:20px" class="fas fa-gift"></i><span> Lista
+                        <a target="_blank" style="display:flex;flex-direction: column;" class="iban" id="lista-nozze"
+                            class="listanozze" href="https://www.habitatonline.it/"><i style="font-size:20px"
+                                class="fas fa-gift"></i><span> Lista
                                 nozze </span>
                             Ønskeliste</a>
                     </div>
@@ -291,19 +289,27 @@
 
     <script>
         function copyIBAN(e) {
-            e.stopPropagation()
             navigator.clipboard.writeText("IT14 B036 4601 6005 2641 0290 125");
             const copyIbanBTN = document.getElementById('copy-iban')
+            console.log(copyIBAN)
             copyIbanBTN.innerText = 'Copied!'
+            copyIbanBTN.style.backgroundColor = 'lightblue'
 
         }
 
         const flipClass = 'card_hover'
 
         const card = document.getElementById('card');
+        const card2 = document.getElementById('card2');
+
         const buttonClick = document.getElementById('buttonFlip');
         buttonClick.addEventListener('click', function () {
-            card.classList.toggle('card_hover');
+            card.classList.toggle(flipClass);
+            if (card2.classList.contains(flipClass)) {
+                setTimeout(() => card2.classList.toggle(flipClass), 300)
+
+            }
+
         });
 
         const buttonClick2 = document.getElementById('buttonFlip2');
@@ -313,10 +319,13 @@
         });
 
 
-        const card2 = document.getElementById('card2');
         const buttonClick3 = document.getElementById('buttonFlip3');
         buttonClick3.addEventListener('click', function () {
             card2.classList.toggle('card_hover');
+            if (card.classList.contains(flipClass)) {
+                setTimeout(() => card.classList.toggle(flipClass), 300)
+
+            }
         });
 
         const buttonClick4 = document.getElementById('buttonFlip4');
