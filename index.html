@@ -190,7 +190,7 @@
 
             .container {
                 width: 95%;
-                height:95%;
+                height: 95%;
             }
 
             h1 {
@@ -261,10 +261,10 @@
                         Help with our honeymoon
                         <i style="margin-top:15px;" class="fa-solid fa-plane"></i>
                     </div>
-                    <div class="card--back side">
+                    <div id="buttonFlip2" class="card--back side">
                         <div>
                             <h1 class="iban"><i class="fas fa-heart"></i> IBAN: IT14 B036 4601 6005 2641 0290 125</h1>
-                            <button id="copy-iban" onclick="copyIBAN()">Copy IBAN</button>
+                            <button id="copy-iban" onclick="(e) => copyIBAN(e)">Copy IBAN</button>
                         </div>
                     </div>
                 </div>
@@ -272,13 +272,13 @@
 
             <div class="cardContainer">
                 <div class="card" id="card2">
-                    <div style="display:flex;flex-direction: column;" id="buttonFlip2" class="card--front side">
+                    <div style="display:flex;flex-direction: column;" id="buttonFlip3" class="card--front side">
                         Help with decorating our house
                         <i style="margin-top:15px;" class="fas fa-house"></i>
                     </div>
-                    <div class="card--back side">
-                        <a style="display:flex;flex-direction: column;" class="iban" id="lista-nozze" class="listanozze"
-                            href="#"><i style="font-size:20px" class="fas fa-gift"></i><span> Lista
+                    <div id="buttonFlip4" class="card--back side">
+                        <a target="_blank" style="display:flex;flex-direction: column;" class="iban" id="lista-nozze" class="listanozze"
+                            href="https://www.habitatonline.it/"><i style="font-size:20px" class="fas fa-gift"></i><span> Lista
                                 nozze </span>
                             Ønskeliste</a>
                     </div>
@@ -290,25 +290,39 @@
     </div>
 
     <script>
-        function copyIBAN() {
+        function copyIBAN(e) {
+            e.stopPropagation()
             navigator.clipboard.writeText("IT14 B036 4601 6005 2641 0290 125");
-
             const copyIbanBTN = document.getElementById('copy-iban')
             copyIbanBTN.innerText = 'Copied!'
 
         }
 
+        const flipClass = 'card_hover'
+
         const card = document.getElementById('card');
         const buttonClick = document.getElementById('buttonFlip');
         buttonClick.addEventListener('click', function () {
-            card.classList.add('card_hover');
+            card.classList.toggle('card_hover');
+        });
+
+        const buttonClick2 = document.getElementById('buttonFlip2');
+        buttonClick2.addEventListener('click', function (e) {
+            const target = e.target.id;
+            if (target !== 'copy-iban') card.classList.toggle('card_hover');
         });
 
 
         const card2 = document.getElementById('card2');
-        const buttonClick2 = document.getElementById('buttonFlip2');
-        buttonClick2.addEventListener('click', function () {
-            card2.classList.add('card_hover');
+        const buttonClick3 = document.getElementById('buttonFlip3');
+        buttonClick3.addEventListener('click', function () {
+            card2.classList.toggle('card_hover');
+        });
+
+        const buttonClick4 = document.getElementById('buttonFlip4');
+        buttonClick4.addEventListener('click', function (e) {
+            const target = e.target.id;
+            if (target !== 'lista-nozze') card2.classList.toggle('card_hover');
         });
 
     </script>
