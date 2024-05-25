@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Nozze - Ønskeliste</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -147,10 +148,11 @@
             background-color: white;
             font-weight: 700;
             color: #d9534f;
-            font-size: 24px;
+            font-size: 16px;
             border-radius: 5px;
             padding: 10px;
-            margin: 10px display: inline-block;
+            margin: 10px;
+            display: inline-block;
             text-transform: uppercase;
         }
 
@@ -201,20 +203,18 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         /* Media Query for Tablets */
         @media only screen and (max-width: 768px) {
-
-
             .card {
-                width: 500px;
-                height: 410px;
+                width: 89vw;
+                height: 45vh;
             }
 
             .card--front {
-                font-size: 18px;
+                font-size: 23px;
             }
 
             .container {
@@ -295,7 +295,7 @@
                         <i style="margin-top:15px;" class="fa-solid fa-plane icon"></i>
                     </div>
                     <div id="buttonFlip2" class="card--back side honeymoon-back">
-                        <div>
+                        <div style="display:flex;flex-direction: column; align-items: center;">
                             <h1 class="iban"><i style="margin-right:5px" class="fas fa-heart"></i>IT14 B036 4601 6005
                                 2641 0290 125</h1>
                             <button id="copy-iban">Copy IBAN</button>
@@ -310,12 +310,11 @@
                         Help with decorating our house
                         <i style="margin-top:15px;" class="fas fa-house icon"></i>
                     </div>
-                    <div id="buttonFlip4" class="card--back side house-back ">
-                        <a target="_blank" style="display:flex;flex-direction: column;" class="iban" id="lista-nozze"
+                    <div id="buttonFlip4"  class="card--back side house-back ">
+                        <a target="_blank" style="display:flex;flex-direction: column; padding:20px" class="iban" id="lista-nozze"
                             class="listanozze" href="https://www.habitatonline.it/"><i style="font-size:20px"
-                                class="fas fa-gift"></i><span> Lista
-                                nozze </span>
-                            Ønskeliste</a>
+                                class="fas fa-gift"></i>
+                                <span style="margin-top:5px">Lista nozze/Ønskeliste</span></a>
                     </div>
                 </div>
             </div>
@@ -326,6 +325,7 @@
 
     <script>
         function copyIBAN(e) {
+            e.preventDefault()
             navigator.clipboard.writeText("IT14 B036 4601 6005 2641 0290 125");
             const copyIbanBTN = document.getElementById('copy-iban')
             console.log(copyIBAN)
@@ -338,8 +338,9 @@
         const delay = 100
 
         const copyIbanBTN = document.getElementById('copy-iban')
-        copyIbanBTN.addEventListener(('click'), copyIBAN)
         copyIbanBTN.addEventListener(('touchstart'), copyIBAN)
+        copyIbanBTN.addEventListener(('click'), copyIBAN)
+   
 
         const flipClass = 'card_hover'
 
