@@ -93,9 +93,19 @@
         }
 
         .card--back {
-            background-color: #d9534f !important;
+            /*background-color: #d9534f !important;*/
+            background-position: center;
             transform: rotateY(180deg);
             background-color: var(--cardSideTwo);
+        }
+
+        .honeymoon-back {
+            background-image: url("./japan.png");
+
+        }
+
+        .house-back {
+            background-image: url("./house.png");
         }
 
         body {
@@ -134,12 +144,13 @@
         }
 
         .iban {
+            background-color: white;
             font-weight: 700;
-            color: white;
+            color: #d9534f;
             font-size: 24px;
-            margin: 0;
-            padding: 10px 0 20px 0;
-            display: inline-block;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px display: inline-block;
             text-transform: uppercase;
         }
 
@@ -233,7 +244,7 @@
             }
 
             .card--front {
-                font-size: 16px;
+                font-size: 21px;
             }
 
             .container {
@@ -254,7 +265,7 @@
 
             .listanozze,
             #lista-nozze {
-                font-size: 13px;
+                font-size: 12px;
             }
 
             .social-links a {
@@ -263,6 +274,10 @@
 
             button {
                 font-size: 12px;
+            }
+
+            .icon {
+                font-size: 25px
             }
         }
     </style>
@@ -277,11 +292,12 @@
                 <div class="card" id="card">
                     <div style="display:flex;flex-direction: column;" id="buttonFlip" class="card--front side">
                         Help with our honeymoon
-                        <i style="margin-top:15px;" class="fa-solid fa-plane"></i>
+                        <i style="margin-top:15px;" class="fa-solid fa-plane icon"></i>
                     </div>
-                    <div id="buttonFlip2" class="card--back side">
+                    <div id="buttonFlip2" class="card--back side honeymoon-back">
                         <div>
-                            <h1 class="iban"><i class="fas fa-heart"></i> IBAN: IT14 B036 4601 6005 2641 0290 125</h1>
+                            <h1 class="iban"><i style="margin-right:5px" class="fas fa-heart"></i>IT14 B036 4601 6005
+                                2641 0290 125</h1>
                             <button id="copy-iban">Copy IBAN</button>
                         </div>
                     </div>
@@ -292,9 +308,9 @@
                 <div class="card" id="card2">
                     <div style="display:flex;flex-direction: column;" id="buttonFlip3" class="card--front side">
                         Help with decorating our house
-                        <i style="margin-top:15px;" class="fas fa-house"></i>
+                        <i style="margin-top:15px;" class="fas fa-house icon"></i>
                     </div>
-                    <div id="buttonFlip4" class="card--back side">
+                    <div id="buttonFlip4" class="card--back side house-back ">
                         <a target="_blank" style="display:flex;flex-direction: column;" class="iban" id="lista-nozze"
                             class="listanozze" href="https://www.habitatonline.it/"><i style="font-size:20px"
                                 class="fas fa-gift"></i><span> Lista
@@ -314,7 +330,8 @@
             const copyIbanBTN = document.getElementById('copy-iban')
             console.log(copyIBAN)
             copyIbanBTN.innerText = 'Copied!'
-            copyIbanBTN.style.backgroundColor = 'lightblue'
+            copyIbanBTN.style.backgroundColor = '#d9534f'
+            copyIbanBTN.style.color = 'white'
 
         }
 
@@ -322,6 +339,7 @@
 
         const copyIbanBTN = document.getElementById('copy-iban')
         copyIbanBTN.addEventListener(('click'), copyIBAN)
+        copyIbanBTN.addEventListener(('touchstart'), copyIBAN)
 
         const flipClass = 'card_hover'
 
