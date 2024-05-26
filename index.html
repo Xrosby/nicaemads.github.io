@@ -18,6 +18,13 @@
             font-size: 16px;
         }
 
+        .dancing-script {
+            font-family: "Dancing Script", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -95,7 +102,9 @@
 
         .card--back {
             /*background-color: #d9534f !important;*/
-            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
             transform: rotateY(180deg);
             background-color: var(--cardSideTwo);
         }
@@ -144,9 +153,23 @@
             font-size: 22px;
         }
 
+        .roboto-regular {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .lora-400 {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+
         .iban {
             background-color: white;
-            font-weight: 700;
+            font-weight: 400;
             color: #d9534f;
             font-size: 16px;
             border-radius: 5px;
@@ -198,7 +221,7 @@
         button {
             width: 120px;
             background-color: white;
-            color: #000;
+            color: #d9534f;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -244,7 +267,7 @@
             }
 
             .card--front {
-                font-size: 21px;
+                font-size: 28px;
             }
 
             .container {
@@ -260,7 +283,7 @@
             }
 
             .iban {
-                font-size: 11px;
+                font-size: 14px;
             }
 
             .listanozze,
@@ -273,7 +296,7 @@
             }
 
             button {
-                font-size: 12px;
+                font-size: 14px;
             }
 
             .icon {
@@ -282,6 +305,11 @@
         }
     </style>
     <script src="https://kit.fontawesome.com/749e968ae4.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -290,15 +318,20 @@
 
             <div class="cardContainer">
                 <div class="card" id="card">
-                    <div style="display:flex;flex-direction: column;" id="buttonFlip" class="card--front side">
-                        Help with our honeymoon
-                        <i style="margin-top:15px;" class="fa-solid fa-plane icon"></i>
+                    <div style="display:flex;flex-direction: column;" id="buttonFlip"
+                        class="card--front side dancing-script">
+                        Aiuta alla nostra luna di miele
+                        <i style="margin:15px;" class="fa-solid fa-plane icon"></i>
+                        Hjælp med vores bryllupsrejse
                     </div>
                     <div id="buttonFlip2" class="card--back side honeymoon-back">
                         <div style="display:flex;flex-direction: column; align-items: center;">
-                            <h1 class="iban"><i style="margin-right:5px" class="fas fa-heart"></i>IT14 B036 &zwj;4601 6005
-                                2641 0290 125</h1>
-                            <button id="copy-iban">Copy IBAN</button>
+                            <span class="iban roboto-regular "><i style="margin-right:5px" class="fas fa-heart"></i>IT14
+                                B036
+                                &zwj;4601
+                                6005
+                                2641 0290 125</span>
+                            <button class="roboto-regular" id="copy-iban">Copy IBAN</button>
                         </div>
                     </div>
                 </div>
@@ -306,15 +339,17 @@
 
             <div class="cardContainer">
                 <div class="card" id="card2">
-                    <div style="display:flex;flex-direction: column;" id="buttonFlip3" class="card--front side">
-                        Help with decorating our house
-                        <i style="margin-top:15px;" class="fas fa-house icon"></i>
+                    <div style="display:flex;flex-direction: column;" id="buttonFlip3"
+                        class="card--front side dancing-script">
+                        Aiuta alla decorazione della nostra casa
+                        <i style="margin:15px;" class="fas fa-house icon"></i>
+                        Hjælp med at indrette vores hjem
                     </div>
-                    <div id="buttonFlip4"  class="card--back side house-back ">
-                        <a target="_blank" style="display:flex;flex-direction: column; padding:20px" class="iban" id="lista-nozze"
-                            class="listanozze" href="https://www.habitatonline.it/"><i style="font-size:20px"
-                                class="fas fa-gift"></i>
-                                <span style="margin-top:5px">Lista nozze/Ønskeliste</span></a>
+                    <div id="buttonFlip4" class="card--back side house-back ">
+                        <a target="_blank" style="display:flex;flex-direction: column; padding:20px" class="iban"
+                            id="lista-nozze" class="listanozze" href="https://www.habitatonline.it/"><i
+                                style="font-size:20px" class="fas fa-gift"></i>
+                            <span class="roboto-regular" style="margin-top:5px">Lista nozze/Ønskeliste</span></a>
                     </div>
                 </div>
             </div>
@@ -340,7 +375,7 @@
         const copyIbanBTN = document.getElementById('copy-iban')
         copyIbanBTN.addEventListener(('touchstart'), copyIBAN)
         copyIbanBTN.addEventListener(('click'), copyIBAN)
-   
+
 
         const flipClass = 'card_hover'
 
