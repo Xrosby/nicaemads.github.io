@@ -233,8 +233,8 @@
         /* Media Query for Tablets */
         @media only screen and (max-width: 768px) {
             .card {
-                width: 89vw;
-                height: 45vh;
+                width: 89dvw;
+                height: 45dvh;
             }
 
             .card--front {
@@ -242,8 +242,8 @@
             }
 
             .container {
-                width: 95%;
-                height: 95%;
+                width: 95dvw;
+                height: 95dvh;
             }
 
             h1 {
@@ -263,17 +263,17 @@
         /* Media Query for Smartphones */
         @media only screen and (max-width: 480px) {
             .card {
-                width: 85vw;
-                height: 45vh;
+                width: 85dvw;
+                height: 45dvh;
             }
 
             .card--front {
-                font-size: 28px;
+                font-size: 20px;
             }
 
             .container {
-                width: 95%;
-                height: 98%;
+                width: 95dvw;
+                height: 98dvh;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -304,13 +304,27 @@
                 font-size: 25px
             }
         }
+
+        @font-face {
+            font-family: 'type';
+            /* Name your font family */
+            src: url('./fonts/JMH\ Typewriter-Thin.ttf');
+            /* Locate the .ttf file within your directory*/
+        }
+
+        .lobster-regular {
+            font-family: type;
+            font-weight: 400;
+            font-style: normal;
+        }
     </style>
     <script src="https://kit.fontawesome.com/749e968ae4.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kode+Mono:wght@400..700&family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
@@ -320,7 +334,7 @@
             <div class="cardContainer">
                 <div class="card" id="card">
                     <div style="display:flex;flex-direction: column;" id="buttonFlip"
-                        class="card--front side dancing-script">
+                        class="card--front side lobster-regular">
                         Aiuta alla nostra luna di miele
                         <i style="margin:15px;" class="fa-solid fa-plane icon"></i>
                         Hjælp med vores bryllupsrejse
@@ -341,15 +355,15 @@
             <div class="cardContainer">
                 <div class="card" id="card2">
                     <div style="display:flex;flex-direction: column;" id="buttonFlip3"
-                        class="card--front side dancing-script">
+                        class="card--front side lobster-regular">
                         Aiuta alla decorazione della nostra casa
                         <i style="margin:15px;" class="fas fa-house icon"></i>
                         Hjælp med at indrette vores hjem
                     </div>
                     <div id="buttonFlip4" class="card--back side house-back ">
-                        <a style="display:flex;flex-direction: column; padding:20px" class="iban"
-                            id="lista-nozze" class="listanozze" href="https://www.habitatonline.it/"><i
-                                style="font-size:20px" class="fas fa-gift"></i>
+                        <a style="display:flex;flex-direction: column; padding:20px" class="iban" id="lista-nozze"
+                            class="listanozze" href="https://www.habitatonline.it/"><i style="font-size:20px"
+                                class="fas fa-gift"></i>
                             <span class="roboto-regular" style="margin-top:5px">Lista nozze/Ønskeliste</span></a>
                     </div>
                 </div>
