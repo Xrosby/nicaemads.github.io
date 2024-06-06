@@ -94,7 +94,7 @@
         .card--front {
             background-color: #ffffff !important;
             font-size: 25px;
-            color: #d9534f;
+            color: #F27A5A;
             font-weight: 300;
             padding: 18px;
             background-color: var(--cardSideOne);
@@ -102,7 +102,7 @@
         }
 
         .card--back {
-            /*background-color: #d9534f !important;*/
+            /*background-color: #F27A5A !important;*/
             background-size: cover;
             background-repeat: no-repeat;
             background-position: 50% 50%;
@@ -127,7 +127,7 @@
             justify-content: center;
             align-items: center;
             height: 100dvh;
-            background-color: #d9534f;
+            background-color: #F27A5A;
         }
 
         .container {
@@ -150,7 +150,7 @@
 
 
         h2 {
-            color: #d9534f;
+            color: #F27A5A;
             font-size: 22px;
         }
 
@@ -171,7 +171,7 @@
         .iban {
             background-color: white;
             font-weight: 400;
-            color: #d9534f;
+            color: #F27A5A;
             font-size: 16px;
             border-radius: 5px;
             padding: 10px;
@@ -220,9 +220,9 @@
         }
 
         button {
-            width: 120px;
+            width: 140px;
             background-color: white;
-            color: #d9534f;
+            color: #F27A5A;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -251,7 +251,7 @@
             }
 
             .iban {
-                font-size: 14px;
+                font-size: 17px;
             }
 
             .listanozze,
@@ -284,7 +284,7 @@
             }
 
             .iban {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             .listanozze,
@@ -313,7 +313,7 @@
         }
 
         .lobster-regular {
-            font-family: type;
+            font-family: "Nanum Myeongjo", serif;
             font-weight: 400;
             font-style: normal;
         }
@@ -321,9 +321,7 @@
     <script src="https://kit.fontawesome.com/749e968ae4.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kode+Mono:wght@400..700&family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 
 </head>
 
@@ -341,12 +339,12 @@
                     </div>
                     <div id="buttonFlip2" class="card--back side honeymoon-back">
                         <div style="display:flex;flex-direction: column; align-items: center;">
-                            <span class="iban roboto-regular "><i style="margin-right:5px" class="fas fa-heart"></i>IT14
+                            <span class="iban roboto-regular ">IT14
                                 B036
                                 &zwj;4601
                                 &zwj;6005
                                 &zwj;2641 &zwj;0290 &zwj;125</span>
-                            <button class="roboto-regular" id="copy-iban">Copia/Kopiér</button>
+                            <button class="roboto-regular" id="copy-iban">Copia - Kopiér</button>
                         </div>
                     </div>
                 </div>
@@ -364,7 +362,7 @@
                         <a style="display:flex;flex-direction: column; padding:20px" class="iban" id="lista-nozze"
                             class="listanozze" href="https://www.habitatonline.it/"><i style="font-size:20px"
                                 class="fas fa-gift"></i>
-                            <span class="roboto-regular" style="margin-top:5px">Lista nozze/Ønskeliste</span></a>
+                            <span class="roboto-regular" style="margin-top:5px">Lista nozze - Ønskeliste</span></a>
                     </div>
                 </div>
             </div>
@@ -380,7 +378,7 @@
             const copyIbanBTN = document.getElementById('copy-iban')
             console.log(copyIBAN)
             copyIbanBTN.innerText = 'Copied!'
-            copyIbanBTN.style.backgroundColor = '#d9534f'
+            copyIbanBTN.style.backgroundColor = '#F27A5A'
             copyIbanBTN.style.color = 'white'
 
         }
