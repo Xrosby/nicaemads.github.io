@@ -239,7 +239,16 @@
         @media only screen and (max-width: 768px) {
             .instruct-image {
                 width: 75vw;
-                height: 17%;
+                height: 24%;
+            }
+
+            #first-img {
+                height: 19%;
+            }
+
+
+            #last-img {
+                height: 12%;
             }
 
             .card {
@@ -275,9 +284,17 @@
 
             .instruct-image {
                 width: 75vw;
-                height: 17%;
+                height: 24%;
             }
 
+            #first-img {
+                height: 19%;
+            }
+
+
+            #last-img {
+                height: 12%;
+            }
 
             .card {
                 width: 85dvw;
@@ -362,9 +379,7 @@
                                 &zwj;2401
                                 &zwj;6010
                                 &zwj;0007 &zwj;0053 &zwj;210</span>
-                                <span
-                                class="iban roboto-regular "
-                                >Domenica Benedetto</span>
+                            <span class="iban roboto-regular ">Domenica Benedetto</span>
                             <button style="display:none" class="roboto-regular" id="copy-iban">Copia - Kopiér</button>
                         </div>
                     </div>
@@ -388,17 +403,18 @@
                 </div>
             </div>
 
-            <div  id="instructions"
+            <div id="instructions"
                 style="position: absolute; top:0px;left:0px; height: 100dvh;width:100dvw; background-color: white; display:none;justify-content: flex-start;align-items: center; flex-direction: column;">
-                <span class="roboto-regular" id="close-instructions" style="position: absolute; top:0px;left:0px; padding:5px;
+                <span class="roboto-regular" id="close-instructions"
+                    style="position: absolute; top:0px;left:0px; padding:5px;
                  background-color:  #F27A5A; padding-left:10px;padding-right:10px;color:white; border-bottom-right-radius:5px;">
                     <i style="font-size:30px" class="fa-solid fa-arrow-left"></i></span>
                 <h3 class="roboto-regular" style="margin-top: 10px;color:#F27A5A; font-weight: 600;">Instructions</h3>
 
-                <img class="instruct-image" style="margin-top: 10px;" src="./1.png" />
+                <img id="first-img" class="instruct-image" style="margin-top: 10px;" src="./1.png" />
                 <img class="instruct-image" style="margin-top: 10px;" src="./2.jpg" />
                 <img class="instruct-image" style="margin-top: 10px;" src="./3.png" />
-                <img class="instruct-image" style="margin-top: 10px;" src="./4.jpg" />
+                <img id="last-img" class="instruct-image" style="margin-top: 10px;" src="./4.jpg" />
                 <a class="roboto-regular" href="https://www.habitatonline.info/default.cfm?obj=24574" style="
                     padding:10px;
                     border: 2px solid #F27A5A;
