@@ -334,7 +334,7 @@
                 <div class="card" id="card">
                     <div style="display:flex;flex-direction: column;" id="buttonFlip"
                         class="card--front side lobster-regular">
-                        Contribuisce alla nostra luna di miele
+                        Vola con noi in viaggio di nozze
                         <i style="margin:15px;" class="fa-solid fa-plane icon"></i>
                         Bidrag til vores bryllupsrejse
                     </div>
@@ -355,28 +355,53 @@
                 <div class="card" id="card2">
                     <div style="display:flex;flex-direction: column;" id="buttonFlip3"
                         class="card--front side lobster-regular">
-                        Contribuisce alla decorazione della nostra casa
+                        Decoriamo insieme la nostra casa
                         <i style="margin:15px;" class="fas fa-house icon"></i>
                         Bidrag til indretning af vores fremtidige hjem
                     </div>
                     <div id="buttonFlip4" class="card--back side house-back ">
-                        <a style="display:flex;flex-direction: column; padding:20px" class="iban" id="lista-nozze"
-                            class="listanozze" href="https://www.habitatonline.info/default.cfm?obj=24574"><i style="font-size:20px"
-                                class="fas fa-gift"></i>
-                            <span class="roboto-regular" style="margin-top:5px">Lista nozze - Ønskeliste</span></a>
+                        <span style="display:flex;flex-direction: column; padding:20px" class="iban" id="lista-nozze"
+                            class="listanozze"><i style="font-size:20px" class="fas fa-gift"></i>
+                            <span class="roboto-regular" style="margin-top:5px">Lista nozze - Ønskeliste</span></span>
 
                     </div>
                 </div>
             </div>
 
+            <div id="instructions"
+                style="position: absolute; top:0px;left:0px; height: 100vh;width:100vw; background-color: white; display:none;justify-content: flex-start;align-items: center; flex-direction: column;">
+                <span id="close-instructions" style="position: absolute; top:0px;left:5px; color:red;font-weight: 900;">
+                    Return</span>
+                <h3 style="margin-top: 10px;"> INSTRUCTIONS</h3>
 
+                <img style="width:100vw;height:20%;margin-top: 10px;" src="./1.jpg" />
+                <img style="width:100vw;height:20%;margin-top: 10px;" src="./2.jpg" />
+                <img style="width:100vw;height:20%;margin-top: 10px;" src="./3.jpg" />
+                <img style="width:100vw;height:20%;margin-top: 10px;" src="./4.jpg" />
+                <a href="https://www.habitatonline.info/default.cfm?obj=24574"
+                    style="
+                    padding:10px;
+                    background-color:lightblue; 
+                    border-radius:3px; 
+                    text-decoration: 
+                    none; color:black;
+                    margin-top: 5px;
+                    ">Continue</a>
+            </div>
 
         </div>
     </div>
 
     <script>
 
+        document.getElementById('close-instructions').addEventListener('click', () => {
+            document.getElementById('instructions').style.display = 'none'
+        })
 
+
+        document.getElementById('lista-nozze').addEventListener('click', () => {
+            document.getElementById('instructions').style.display = 'flex'
+        })
 
         function copyIBAN(e) {
             e.preventDefault()
@@ -388,6 +413,8 @@
             copyIbanBTN.style.color = 'white'
 
         }
+
+
 
 
         const ibanText = document.getElementById('ibanText');
