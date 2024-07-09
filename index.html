@@ -33,6 +33,11 @@
             color: var(--fontColorBody);
         }
 
+        .instruct-image {
+            width: 500px;
+            height: 200px
+        }
+
         body {
             display: flex;
             justify-content: center;
@@ -232,6 +237,11 @@
 
         /* Media Query for Tablets */
         @media only screen and (max-width: 768px) {
+            .instruct-image {
+                width: 80vw;
+                height: 20%;
+            }
+
             .card {
                 width: 89dvw;
                 height: 45dvh;
@@ -262,6 +272,13 @@
 
         /* Media Query for Smartphones */
         @media only screen and (max-width: 480px) {
+
+            .instruct-image {
+                width: 80vw;
+                height: 20%;
+            }
+
+            
             .card {
                 width: 85dvw;
                 height: 45dvh;
@@ -372,14 +389,13 @@
                 style="position: absolute; top:0px;left:0px; height: 100dvh;width:100dvw; background-color: white; display:none;justify-content: flex-start;align-items: center; flex-direction: column;">
                 <span id="close-instructions" style="position: absolute; top:0px;left:5px; color:red;font-weight: 900;">
                     Return</span>
-                <h3 style="margin-top: 10px;"> INSTRUCTIONS</h3>
+                <h3 style="margin-top: 10px;">Instructions</h3>
 
-                <img style="width:80vw;height:20%;margin-top: 10px;" src="./1.jpg" />
-                <img style="width:80vw;height:20%;margin-top: 10px;" src="./2.jpg" />
-                <img style="width:80vw;height:20%;margin-top: 10px;" src="./3.jpg" />
-                <img style="width:80vw;height:20%;margin-top: 10px;" src="./4.jpg" />
-                <a href="https://www.habitatonline.info/default.cfm?obj=24574"
-                    style="
+                <img class="instruct-image" style="margin-top: 10px;" src="./1.jpg" />
+                <img class="instruct-image" style="margin-top: 10px;" src="./2.jpg" />
+                <img class="instruct-image" style="margin-top: 10px;" src="./3.jpg" />
+                <img class="instruct-image" style="margin-top: 10px;" src="./4.jpg" />
+                <a href="https://www.habitatonline.info/default.cfm?obj=24574" style="
                     padding:10px;
                     background-color:lightblue; 
                     border-radius:3px; 
